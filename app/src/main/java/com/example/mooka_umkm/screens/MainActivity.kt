@@ -1,4 +1,4 @@
-package com.example.mooka_umkm
+package com.example.mooka_umkm.screens
 
 import com.example.mooka_umkm.R
 

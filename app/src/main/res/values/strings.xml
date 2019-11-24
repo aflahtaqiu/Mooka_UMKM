@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Mooka-UMKM</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="chat">Chat</string>
+    <string name="penilaian">Penilaian</string>
+    <string name="input_dialog_title">Enter event title</string>
+    <string name="empty_input_text">Text is empty</string>
+    <string name="dialog_delete_confirmation">Delete this event?</string>
+    <string name="delete">Delete</string>
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+    <string name="nilai_yang_didapat">Nilai yang didapat :
+        <b>B</b>
+    </string>
+    <string name="statistic">Statistik</string>
 </resources>
