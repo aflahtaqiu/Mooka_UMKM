@@ -9,6 +9,6 @@
 
     <!-- The radius makes the corners rounded -->
     <corners
-        android:radius="@dimen/_20sdp">
+        android:radius="20dp">
     </corners>
 </shape>

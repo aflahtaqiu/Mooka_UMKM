@@ -14,12 +14,20 @@
         android:id="@+id/inboxFragment"
         android:name="com.example.mooka_umkm.screens.InboxFragment"
         android:label="fragment_inbox"
-        tools:layout="@layout/fragment_inbox" />
+        tools:layout="@layout/fragment_inbox" >
+        <action
+            android:id="@+id/action_inboxFragment_to_umkmbisaFragment"
+            app:destination="@id/umkmbisaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/communityFragment"
         android:name="com.example.mooka_umkm.screens.CommunityFragment"
         android:label="fragment_community"
-        tools:layout="@layout/fragment_community" />
+        tools:layout="@layout/fragment_community" >
+        <action
+            android:id="@+id/action_communityFragment_to_chatroomFragment"
+            app:destination="@id/chatroomFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tokoFragment"
         android:name="com.example.mooka_umkm.screens.TokoFragment"
@@ -32,7 +40,7 @@
         tools:layout="@layout/fragment_chatroom" />
     <fragment
         android:id="@+id/umkmbisaFragment"
-        android:name="com.example.mooka_umkm.UmkmbisaFragment"
+        android:name="com.example.mooka_umkm.screens.UmkmbisaFragment"
         android:label="fragment_umkmbisa"
         tools:layout="@layout/fragment_umkmbisa" />
 </navigation>

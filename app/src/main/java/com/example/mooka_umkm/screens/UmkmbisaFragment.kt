@@ -1,4 +1,4 @@
-package com.example.mooka_umkm
+package com.example.mooka_umkm.screens
 
 
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.mooka_umkm.R
 
 /**
  * A simple [Fragment] subclass.
@@ -17,7 +18,8 @@ class UmkmbisaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_umkmbisa, container, false)
+        val view = inflater.inflate(R.layout.fragment_umkmbisa, container, false)
+        return view
     }
 
 

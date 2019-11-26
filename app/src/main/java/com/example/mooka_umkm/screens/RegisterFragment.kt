@@ -8,25 +8,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.mooka_umkm.R
-import kotlinx.android.synthetic.main.fragment_login.view.*
+import kotlinx.android.synthetic.main.fragment_register.view.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class LoginFragment : Fragment() {
+class RegisterFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
-        view.tv_daftar_disini.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRegisterFragment())
+        val view = inflater.inflate(R.layout.fragment_register, container, false)
+        view.btn_daftar.setOnClickListener {
+            findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToMainActivity())
         }
-        view.btn_login.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMainActivity())
-        }
+        view.tv_masuk_disini.setOnClickListener { findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())}
         return view
     }
 }

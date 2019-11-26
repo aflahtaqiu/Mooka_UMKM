@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".RegisterFragment">
+    tools:context=".screens.RegisterFragment">
 
 
 
@@ -100,8 +100,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="24dp"
         android:textColorHint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
-        app:layout_constraintEnd_toStartOf="@+id/btnUpload"
+        app:layout_constraintBottom_toTopOf="@+id/btn_daftar"
+        app:layout_constraintEnd_toStartOf="@+id/btn_upload"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -113,7 +113,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnUpload"
+        android:id="@+id/btn_upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -121,17 +121,17 @@
         android:text="Upload"
         android:textAllCaps="false"
         app:backgroundTint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintBottom_toTopOf="@+id/btn_daftar"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_daftar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:background="@color/ruby_red"
-        android:text="masuk"
+        android:text="daftar"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         app:backgroundTint="@color/ruby_red"

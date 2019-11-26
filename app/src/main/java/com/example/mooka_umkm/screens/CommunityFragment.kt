@@ -18,7 +18,8 @@ class CommunityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_community, container, false)
+        val view = inflater.inflate(R.layout.fragment_community, container, false)
+        return view
     }
 
 

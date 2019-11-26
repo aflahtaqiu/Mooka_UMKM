@@ -4,4 +4,19 @@
         android:id="@id/homeFragment"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/home"/>
+
+    <item
+        android:id="@id/inboxFragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Inbox"/>
+
+    <item
+        android:id="@id/communityFragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Community"/>
+
+    <item
+        android:id="@id/tokoFragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Toko"/>
 </menu>
