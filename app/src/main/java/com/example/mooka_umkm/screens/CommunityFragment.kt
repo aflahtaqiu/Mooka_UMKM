@@ -46,10 +46,9 @@ class CommunityFragment : Fragment() {
         setupRekomendasi(view!!, umkmId)
         setupKomunitasSaya(view, umkmId)
         view.mtb_1.setOnClickListener {
-//                        val umkmId = getPrefInt("umkm_id")
-
-
-            NotificationService.getInstance(context).sendNotifToWargas("title", "sdfasdqwe")
+                        val umkmId = context?.getPrefInt("umkm_id")
+            NotificationService.getInstance(context).sendNotifToUmkm(
+                umkmId.toString(),"Barang Ditawar", "Barang anda asdlkasjdqeker ditawar oleh seseorang")
 //            Log.d(CommunityFragment::class.java.simpleName, "onCreateView: $response");
         }
         return view

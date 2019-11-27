@@ -68,31 +68,31 @@ public class NotificationService {
 
     private Bitmap largeIcon(Context context) {
         Resources res = context.getResources();
-        return BitmapFactory.decodeResource(res, R.mipmap.logo_mika);
+        return BitmapFactory.decodeResource(res, R.drawable.logo_mika);
     }
 
-    public void sendNotifToWargas(final String title, final String body) {
+    public void sendNotifToUmkm(final String umkm_id, final String title, final String body) {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                pushNotification(title, body);
+                pushNotification(umkm_id, title, body);
             }
         }).start();
     }
 
-    private void pushNotification(String title,String body) {
+    private void pushNotification(String topics, String title,String body) {
         JSONObject jPayload = new JSONObject();
         JSONObject jNotification = new JSONObject();
         JSONObject jData = new JSONObject();
         try {
-            jNotification.put("title", "Pengunguman untuk Warga RT 02");
-            jNotification.put("body",  title);
+            jNotification.put("title", title);
+            jNotification.put("body",  body);
             jNotification.put("sound", RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
             jNotification.put("badge", "1");
             jNotification.put("click_action", "OPEN_ACTIVITY_1");
 //            jNotification.put("icon", "ic_notification");
 
-            jPayload.put("to", "/topics/pengunguman" );
+            jPayload.put("to", "/topics/" + topics );
             jPayload.put("collapse_key", "type_a");
             jPayload.put("priority", "high");
             jPayload.put("notification", jNotification);

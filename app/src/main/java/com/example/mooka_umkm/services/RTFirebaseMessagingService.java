@@ -71,7 +71,7 @@ public class RTFirebaseMessagingService extends FirebaseMessagingService {
                 .setLights(Color.RED, 1000, 300)
                 .setDefaults(Notification.DEFAULT_VIBRATE)
                 .setNumber(++numMessages)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.logo_mika)
                 .setLargeIcon(largeIcon(this));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN
@@ -116,7 +116,7 @@ public class RTFirebaseMessagingService extends FirebaseMessagingService {
 
     private Bitmap largeIcon(RTFirebaseMessagingService namiFirebaseMessagingService) {
         Resources res = namiFirebaseMessagingService.getResources();
-        return BitmapFactory.decodeResource(res, R.mipmap.ic_launcher);
+        return BitmapFactory.decodeResource(res, R.mipmap.logo_mika);
     }
 
 

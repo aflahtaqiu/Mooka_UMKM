@@ -27,7 +27,8 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-        FirebaseMessaging.getInstance().subscribeToTopic("pengunguman")
+        val umkmId = context?.getPrefInt("umkm_id")
+        FirebaseMessaging.getInstance().subscribeToTopic(umkmId.toString())
         val umkm_id = context?.getPrefInt("umkm_id")
         getDetailUmkm(view!!, umkm_id!!)
         return view

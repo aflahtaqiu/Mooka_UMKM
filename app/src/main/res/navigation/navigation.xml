@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
+    android:label="MIKA"
     app:startDestination="@id/homeFragment">
 
     <fragment
@@ -14,7 +15,7 @@
         android:id="@+id/inboxFragment"
         android:name="com.example.mooka_umkm.screens.InboxFragment"
         android:label="fragment_inbox"
-        tools:layout="@layout/fragment_inbox" >
+        tools:layout="@layout/fragment_inbox">
         <action
             android:id="@+id/action_inboxFragment_to_umkmbisaFragment"
             app:destination="@id/umkmbisaFragment" />
@@ -23,7 +24,7 @@
         android:id="@+id/communityFragment"
         android:name="com.example.mooka_umkm.screens.CommunityFragment"
         android:label="fragment_community"
-        tools:layout="@layout/fragment_community" >
+        tools:layout="@layout/fragment_community">
         <action
             android:id="@+id/action_communityFragment_to_chatroomFragment"
             app:destination="@id/chatroomFragment" />
@@ -37,11 +38,12 @@
         android:id="@+id/chatroomFragment"
         android:name="com.example.mooka_umkm.screens.ChatroomFragment"
         android:label="fragment_chatroom"
-        tools:layout="@layout/fragment_chatroom" >
+        tools:layout="@layout/fragment_chatroom">
         <argument
             android:name="COMMUNITY_ID"
             app:argType="integer" />
-        <argument android:name="UMKM_ID"
+        <argument
+            android:name="UMKM_ID"
             app:argType="integer" />
     </fragment>
     <fragment
