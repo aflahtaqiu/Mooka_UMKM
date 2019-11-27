@@ -164,11 +164,11 @@ fun dpToPx(dp: Int, context: Context): Int =
     ).toInt()
 
 
-fun daysOfWeekFromLocale(): Array<DayOfWeek> {
-    val firstDayOfWeek = WeekFields.of(Locale.getDefault()).firstDayOfWeek
+fun daysOfWeekFromLocale(): Array<org.threeten.bp.DayOfWeek> {
+    val firstDayOfWeek = org.threeten.bp.temporal.WeekFields.of(Locale.getDefault()).firstDayOfWeek
     var daysOfWeek = DayOfWeek.values()
     // Order `daysOfWeek` array so that firstDayOfWeek is at index 0.
-    if (firstDayOfWeek != DayOfWeek.MONDAY) {
+    if (firstDayOfWeek != org.threeten.bp.DayOfWeek.MONDAY) {
         val rhs = daysOfWeek.sliceArray(firstDayOfWeek.ordinal..daysOfWeek.indices.last)
         val lhs = daysOfWeek.sliceArray(0 until firstDayOfWeek.ordinal)
         daysOfWeek = rhs + lhs

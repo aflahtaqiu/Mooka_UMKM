@@ -8,6 +8,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,5 +23,7 @@ class MainActivity : AppCompatActivity() {
             supportActionBar?.title = nd.label
         }
         navigation.setupWithNavController(navController )
+
+        // Write a message to the database
     }
 }

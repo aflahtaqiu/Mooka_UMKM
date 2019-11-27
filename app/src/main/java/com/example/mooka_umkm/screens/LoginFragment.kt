@@ -8,12 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.example.mooka_customer.extension.showAlertDialog
+import com.example.mooka_customer.extension.showmessage
 import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.example.mooka_umkm.network.model.UMKM
-import com.gemastik.raporsa.extension.showAlertDialog
-import com.gemastik.raporsa.extension.showmessage
 import com.pens.managementmasyrakat.extension.savePref
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
