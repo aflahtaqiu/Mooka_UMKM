@@ -7,18 +7,21 @@
     tools:context=".screens.ChatroomFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_chat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/view9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_messages_send">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <View
+        android:id="@+id/view9"
         android:layout_width="0dp"
         android:layout_height="2dp"
-        android:layout_marginBottom="0dp"
         android:background="#dfdfdf"
         app:layout_constraintBottom_toTopOf="@+id/layout_chatbox"
         app:layout_constraintLeft_toLeftOf="parent"

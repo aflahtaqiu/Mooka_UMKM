@@ -9,5 +9,8 @@ package com.example.mooka_umkm.network.model
 
 
 data class MessageChat (
-    val nfaf:String
+    val id:Long = 0,
+    val isi:String = "",
+    val nama_pemilik:String = "",
+    val nama_toko:String = ""
 )
