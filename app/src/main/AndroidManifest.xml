@@ -17,8 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".screens.MainActivity"></activity>
+        <service android:name=".services.MikaFirebaseMessagingService"/>
+        <service android:name=".services.MikaFirebaseInstanceIDService"/>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
+    
 
 </manifest>

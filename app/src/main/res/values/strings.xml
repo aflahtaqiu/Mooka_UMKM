@@ -15,4 +15,8 @@
         <b>B</b>
     </string>
     <string name="statistic">Statistik</string>
+
+    <string name="main_notification_channel_name">Primary</string>
+
+    <string name="notification_channel_id">default</string>
 </resources>

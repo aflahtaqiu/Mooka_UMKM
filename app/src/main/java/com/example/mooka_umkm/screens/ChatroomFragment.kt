@@ -45,7 +45,7 @@ class ChatroomFragment : Fragment() {
             .child("community-${chatroomFragmentArgs.communityid}")
             .child("messages")
 
-        readMessage(chatroomFragmentArgs.umkmid)
+        readMessage(chatroomFragmentArgs.communityid)
 
         view.button_chatbox_send.setOnClickListener {
             val pesan = hashMapOf<String,Any>()
@@ -63,10 +63,10 @@ class ChatroomFragment : Fragment() {
         return view
     }
 
-    private fun readMessage(umkmid: Int) {
+    private fun readMessage(community_id: Int) {
         databaseReference = FirebaseDatabase.getInstance()
             .getReference("group_chat")
-            .child("community-$umkmid")
+            .child("community-$community_id")
             .child("messages")
 
         databaseReference!!.addValueEventListener(object : ValueEventListener{
