@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.mooka_umkm.R
+import kotlinx.android.synthetic.main.fragment_inbox.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -20,7 +21,7 @@ class InboxFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_inbox, container, false)
-        view.setOnClickListener{
+        view.btn_kilik_disini.setOnClickListener{
             findNavController().navigate(InboxFragmentDirections.actionInboxFragmentToUmkmbisaFragment())
         }
 

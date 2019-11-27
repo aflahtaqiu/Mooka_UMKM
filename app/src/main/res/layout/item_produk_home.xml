@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginEnd="16dp">
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/iv_banner_product"
         android:layout_width="100dp"
         android:layout_height="120dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +17,7 @@
         android:scaleType="fitXY"/>
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/tv_name_product"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -25,18 +25,19 @@
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/iv_banner_product"
         android:ellipsize="end"
         android:maxLines="1"/>
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/tv_price_product"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Rp 210.000"
         android:textColor="@color/ruby_red"
+        android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_product" />
 </androidx.constraintlayout.widget.ConstraintLayout>
