@@ -3,15 +3,18 @@ package com.example.mooka_umkm.adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mooka_umkm.R;
+import com.example.mooka_umkm.network.Repository;
 import com.example.mooka_umkm.network.model.MessageChat;
 
 import java.util.List;
@@ -59,7 +62,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
-        MessageChat item = chats.get(position);
+        final MessageChat item = chats.get(position);
 
         holder.tvName.setText(item.getNama_pemilik());
         holder.tvMessage.setText(item.getIsi());
@@ -74,7 +77,8 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
                             .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    // TODO: logic add point to ikm
+                                    Repository.INSTANCE.addPoint((int) item.getId());
+                                    Toast.makeText(context, "Anda telah menambahkan 1 poin untuk toko " + item.getNama_toko(), Toast.LENGTH_LONG).show();
                                 }
                             })
                             .setNegativeButton("No", new DialogInterface.OnClickListener() {
