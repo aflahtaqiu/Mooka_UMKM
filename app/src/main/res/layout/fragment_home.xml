@@ -31,7 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -44,7 +44,7 @@
             app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -52,7 +52,7 @@
             android:textColor="@color/colorWhite"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama" />
 
         <TextView
             android:id="@+id/textView21"
@@ -193,7 +193,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
         <TextView
-            android:id="@+id/textView31"
+            android:id="@+id/tv_nama_pemilik"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -205,7 +205,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <TextView
-            android:id="@+id/textView32"
+            android:id="@+id/tv_rating"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="63dp"
@@ -214,10 +214,10 @@
             android:textColor="@color/ruby_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView23"
-            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama_pemilik" />
 
         <TextView
-            android:id="@+id/textView33"
+            android:id="@+id/tv_bulan_bergabung"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="34dp"
@@ -226,10 +226,10 @@
             android:textColor="@color/ruby_red"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView24"
-            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_rating" />
 
         <TextView
-            android:id="@+id/textView34"
+            android:id="@+id/tv_jumlah_produk"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="58dp"
@@ -240,7 +240,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
         <TextView
-            android:id="@+id/textView35"
+            android:id="@+id/tv_produk_terbaik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="58dp"
@@ -248,7 +248,7 @@
             android:text="Pasmina Instant"
             android:textColor="@color/ruby_red"
             app:layout_constraintStart_toEndOf="@+id/textView27"
-            app:layout_constraintTop_toBottomOf="@+id/textView34" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_jumlah_produk" />
 
         <TextView
             android:id="@+id/textView36"
@@ -259,10 +259,10 @@
             android:text="4 Produk per Bulan"
             android:textColor="@color/ruby_red"
             app:layout_constraintStart_toEndOf="@+id/textView28"
-            app:layout_constraintTop_toBottomOf="@+id/textView35" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_produk_terbaik" />
 
         <TextView
-            android:id="@+id/textView37"
+            android:id="@+id/tv_pendapatan_perbulan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

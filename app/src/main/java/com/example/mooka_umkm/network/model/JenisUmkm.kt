@@ -1,4 +1,4 @@
-package com.example.mooka_customer.network.model
+package com.example.mooka_umkm.network.model
 
 
 data class JenisUmkm(

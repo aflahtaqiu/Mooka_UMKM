@@ -1,7 +1,6 @@
 package com.example.mooka_umkm.network.model
 
 import com.example.mooka_customer.network.model.Gambar
-import com.example.mooka_customer.network.model.JenisUmkm
 import com.example.mooka_umkm.network.lib.DataResponse
 
 
@@ -20,7 +19,9 @@ data class UMKM(
     val updated_at: String,
     val jenis_umkm: JenisUmkm,
     val phone: String,
-    val password:String
+    val password:String,
+    val orders: List<Order>,
+    val products: List<Product>
 ) : DataResponse<UMKM> {
     override fun retrieveData(): UMKM = this
 }

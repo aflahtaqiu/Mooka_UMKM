@@ -1,5 +1,7 @@
 package com.example.mooka_umkm.network
 
+import com.example.mooka_umkm.network.model.Community
+import com.example.mooka_umkm.network.model.CommunityUMKM
 import com.example.mooka_umkm.network.model.ListResponse
 import com.example.mooka_umkm.network.model.UMKM
 import kotlinx.coroutines.Deferred
@@ -12,6 +14,27 @@ interface ApiService {
 
     @GET("umkms")
     fun getAllUmkms() : Deferred<Response<ListResponse<UMKM>>>
+
+    @GET("umkms/{umkm_id}")
+    fun getDetailUmkm(
+        @Path("umkm_id") id: Int
+    ) : Deferred<Response<UMKM>>
+
+    @GET("communities")
+    fun getCommunities() : Deferred<Response<ListResponse<Community>>>
+
+    @FormUrlEncoded
+    @POST("umkms/{umkm_id}/community_umkms")
+    fun postIkutCommunity(
+        @Path("umkm_id") id: Int,
+        @Field("community_id") communityId: Int
+    ) : Deferred<Response<CommunityUMKM>>
+
+    @GET("umkms/{umkm_id}/community_umkms")
+    fun getAllUmkmCommunity(
+        @Path("umkm_id") id: Int
+    ) : Deferred<Response<ListResponse<CommunityUMKM>>>
+
 
 //    @GET("search/repositories")
 //    fun getRepos(@Query("q") query: String): Deferred<Response<ListResponse<Repo>>>

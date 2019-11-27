@@ -3,6 +3,8 @@ package com.example.mooka_umkm.network
 import android.content.Context
 import com.example.mooka_umkm.Config
 import com.example.mooka_umkm.network.lib.networkCall
+import com.example.mooka_umkm.network.model.Community
+import com.example.mooka_umkm.network.model.CommunityUMKM
 import com.example.mooka_umkm.network.model.ListResponse
 import com.example.mooka_umkm.network.model.UMKM
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -22,6 +24,21 @@ object Repository {
         client = ManagemenApi.apiService.getAllUmkms()
     }
 
+    fun getUMKMId(id: Int) = networkCall<UMKM, UMKM> {
+        client = ManagemenApi.apiService.getDetailUmkm(id)
+    }
+
+    fun getCommunities() = networkCall<ListResponse<Community>, List<Community>> {
+        client = ManagemenApi.apiService.getCommunities()
+    }
+
+    fun postIkutCommunity(umkm_id: Int, communityId: String) = networkCall<CommunityUMKM, CommunityUMKM> {
+        client = ManagemenApi.apiService.postIkutCommunity(umkm_id, communityId.toInt())
+    }
+
+    fun getAllUmkmCommunity(umkm_id: Int) = networkCall<ListResponse<CommunityUMKM>, List<CommunityUMKM>> {
+        client = ManagemenApi.apiService.getAllUmkmCommunity(umkm_id)
+    }
 //    fun saveUser(user: UserResponse, context: Context){
 //        val gson = Gson()
 //        val json = gson.toJson(user)

@@ -185,6 +185,30 @@ fun Context.hideKeyboardFrom(view: View) {
     imm.hideSoftInputFromWindow(view.windowToken, 0)
 }
 
+fun Context.showAlertDialog(
+    title: String = "Perubahan Data",
+    message: String = "Apakah anda yakin ingin melalukannya",
+    onYes: String = "Perubahan Data Berhasil",
+    onNo: String = "Perubahan Data Gagal",
+    onNegatifPressed: () -> Unit = {},
+    update: () -> Unit
+){
+    val builder = AlertDialog.Builder(this)
+    builder.setTitle(title)
+    builder.setMessage(message)
+    builder.setPositiveButton("YES"){ _, _ ->
+        this.showmessage(onYes)
+        update()
+    }
+
+    builder.setNegativeButton("No"){ _, _ ->
+        onNegatifPressed()
+        this.showmessage(onNo)
+    }
+    val dialog: AlertDialog = builder.create()
+    dialog.show()
+}
+
 //fun Context.showEditableBottomSheetDialog(title: String = "Masukkan data baru",
 //                                          text: String,
 //                                          inputType: Int = InputType.TYPE_CLASS_TEXT,

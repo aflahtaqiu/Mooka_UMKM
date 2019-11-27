@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@id/homeFragment"
         android:icon="@drawable/ic_home_black_24dp"
+        app:showAsAction="always"
         android:title="@string/home"/>
 
     <item
         android:id="@id/inboxFragment"
-        android:icon="@drawable/ic_home_black_24dp"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_inbox_black_24dp"
         android:title="Inbox"/>
 
     <item
         android:id="@id/communityFragment"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_people_black_24dp"
+        app:showAsAction="always"
         android:title="Community"/>
 
     <item
         android:id="@id/tokoFragment"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_store_black_24dp"
+        app:showAsAction="always"
         android:title="Toko"/>
 </menu>

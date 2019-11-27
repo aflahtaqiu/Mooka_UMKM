@@ -8,12 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.example.mooka_customer.extension.finishLoading
 import com.example.mooka_customer.extension.showAlertDialog
 import com.example.mooka_customer.extension.showmessage
+import com.example.mooka_customer.extension.toLoading
 import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.example.mooka_umkm.network.model.UMKM
+import com.pens.managementmasyrakat.extension.getPrefInt
 import com.pens.managementmasyrakat.extension.savePref
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
@@ -34,6 +37,9 @@ class LoginFragment : Fragment() {
         view.btn_login.setOnClickListener {
             loginUmkm(view.et_no_telp.text.toString(), view.et_password.text.toString())
         }
+        if (context!!.getPrefInt("umkm_id") != -1){
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMainActivity())
+        }
         return view
     }
 
@@ -42,8 +48,10 @@ class LoginFragment : Fragment() {
             when(it?.status){
                 Resource.LOADING ->{
                     Log.d("Loading", it.status.toString())
+                    view?.btn_login?.toLoading()
                 }
                 Resource.SUCCESS ->{
+                    view?.btn_login?.finishLoading()
                     val umkm:UMKM? = it.data!!.find { umkm ->  noTelp == umkm.phone && password == umkm.password }
                     if (umkm == null)
                         context!!.showAlertDialog("Gagal Login!", "Pastikan nomor telepon dan password Anda telah terdaftar")
@@ -54,6 +62,7 @@ class LoginFragment : Fragment() {
                     Log.d("Success", it.data.toString())
                 }
                 Resource.ERROR ->{
+                    view?.btn_login?.finishLoading()
                     Log.d("Error", it.message!!)
                     context?.showmessage("Something is wrong")
                 }

@@ -13,9 +13,9 @@
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/iv_banner"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="132dp"
             android:scaleType="fitXY"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/tv_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -34,24 +34,25 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_banner" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/tv_subtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ellipsize="end"
             android:maxLines="2"
+            android:minLines="2"
             android:text="Group penjual barang - barang"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/iv_checked"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@mipmap/checked"

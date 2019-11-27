@@ -31,15 +31,16 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_rekomendasi_komunitas" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:padding="8dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="4dp"
         android:backgroundTint="@color/ruby_red"
         android:text="Buat Komunitas Baru"
         android:textAllCaps="false"
@@ -52,6 +53,7 @@
         android:id="@+id/materialButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/colorWhite"
@@ -67,10 +69,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="64dp" />
+        android:layout_marginBottom="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rv_rekomendasi_komunitas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -79,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18"
-        tools:listitem="@layout/item_rekomendasi_komunitas" />
+        tools:listitem="@layout/item_komunitas_saya" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
@@ -91,6 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:id="@+id/rv_komunitas_saya"
         tools:listitem="@layout/item_komunitas_saya"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
