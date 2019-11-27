@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.fragment)
         navController.addOnDestinationChangedListener { nc: NavController, nd: NavDestination, bundle: Bundle? ->
-            //            if (nd in [1,2,3])
+            supportActionBar?.title = nd.label
         }
         navigation.setupWithNavController(navController )
     }
