@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
                     view.tv_rating.text = "5.0 / 5"
                     view.tv_bulan_bergabung.text = "0 Bulan Lalu"
 
-                    view.tv_jumlah_produk.text = it.data!!.orders.count().toString()
+                    view.tv_jumlah_produk.text = it.data!!.products.count().toString()
                     view.tv_produk_terbaik.text = it.data!!.products.firstOrNull()?.title
 
 //<<<<<<< HEAD

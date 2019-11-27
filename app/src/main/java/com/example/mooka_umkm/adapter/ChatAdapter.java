@@ -64,7 +64,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
         final MessageChat item = chats.get(position);
 
-        holder.tvName.setText(item.getNama_pemilik());
+        holder.tvName.setText(item.getNama_pemilik() + " ("+ item.getNama_toko() + ")");
         holder.tvMessage.setText(item.getIsi());
 
         if (isAdmin) {
