@@ -34,7 +34,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_rekomendasi_komunitas" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_komunitas_kota" />
 
 
         <com.google.android.material.button.MaterialButton
@@ -51,7 +51,7 @@
             app:icon="@drawable/ic_add_circle_black_24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_komunitas_kota" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_komunitas_saya" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/materialButton"
@@ -110,9 +110,10 @@
             android:layout_marginTop="24dp"
             android:text="Komunitas Kota"
             android:textColor="@android:color/black"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_komunitas_saya" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_rekomendasi_komunitas" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_komunitas_kota"
