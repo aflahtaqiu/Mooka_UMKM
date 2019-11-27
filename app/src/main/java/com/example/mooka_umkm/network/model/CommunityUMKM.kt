@@ -9,7 +9,8 @@ data class CommunityUMKM(
     val is_admin: Boolean,
     val umkm_id: Int,
     val updated_at: String,
-    val community: Community
+    val community: Community,
+    val umkm: UMKM
 ) : DataResponse<CommunityUMKM> {
     override fun retrieveData(): CommunityUMKM = this
 }

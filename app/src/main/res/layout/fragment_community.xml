@@ -42,9 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginTop="24dp"
             android:backgroundTint="@color/ruby_red"
             android:padding="8dp"
             android:text="Buat Komunitas Baru"
@@ -52,7 +51,7 @@
             app:icon="@drawable/ic_add_circle_black_24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rv_komunitas_saya" />
+            app:layout_constraintTop_toBottomOf="@+id/rv_komunitas_kota" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/materialButton"
@@ -102,6 +101,31 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:id="@+id/rv_komunitas_saya"
             tools:listitem="@layout/item_komunitas_saya"/>
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Komunitas Kota"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_komunitas_saya" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_komunitas_kota"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView32"
+            tools:listitem="@layout/item_komunitas_saya"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

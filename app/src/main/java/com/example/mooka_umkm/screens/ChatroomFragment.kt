@@ -41,6 +41,7 @@ class ChatroomFragment : Fragment() {
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_chatroom, container, false)
         val chatroomFragmentArgs by navArgs<ChatroomFragmentArgs>()
+
         getUmkmDetail(view!!, chatroomFragmentArgs.umkmid)
         databaseReference = FirebaseDatabase.getInstance()
             .getReference("group_chat")
@@ -48,7 +49,7 @@ class ChatroomFragment : Fragment() {
             .child("messages")
 
         val id = context!!.getPrefInt("umkm_id")
-        chatAdapter= ChatAdapter(chatMessages,id)
+        chatAdapter= ChatAdapter(chatMessages,id, context, chatroomFragmentArgs.isAdmin)
 
         readMessage(chatroomFragmentArgs.communityid)
 

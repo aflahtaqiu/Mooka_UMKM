@@ -15,6 +15,7 @@ import com.google.gson.Gson
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import java.util.concurrent.TimeUnit
 
 
@@ -38,6 +39,10 @@ object Repository {
 
     fun getAllUmkmCommunity(umkm_id: Int) = networkCall<ListResponse<CommunityUMKM>, List<CommunityUMKM>> {
         client = ManagemenApi.apiService.getAllUmkmCommunity(umkm_id)
+    }
+
+    fun addPoint (umkm_id: Int) = networkCall<UMKM, UMKM> {
+        client = ManagemenApi.apiService.addCommunityPoint(umkm_id)
     }
 //    fun saveUser(user: UserResponse, context: Context){
 //        val gson = Gson()

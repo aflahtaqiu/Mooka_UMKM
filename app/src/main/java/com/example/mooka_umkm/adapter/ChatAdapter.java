@@ -1,15 +1,20 @@
 package com.example.mooka_umkm.adapter;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mooka_umkm.R;
+import com.example.mooka_umkm.network.Repository;
 import com.example.mooka_umkm.network.model.MessageChat;
 
 import java.util.List;
@@ -25,13 +30,17 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
 
     private List<MessageChat> chats;
     private int idSender;
+    private Context context;
+    private boolean isAdmin;
 
     private static final int MSG_TYPE_LEFT = 0;
     private static final int MSG_TYPE_RIGHT = 1;
 
-    public ChatAdapter(List<MessageChat> chats, int idSender) {
+    public ChatAdapter(List<MessageChat> chats, int idSender, Context context, boolean isAdmin) {
         this.chats = chats;
         this.idSender = idSender;
+        this.context = context;
+        this.isAdmin = isAdmin;
     }
 
     @Override
@@ -53,12 +62,39 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
-        MessageChat item = chats.get(position);
+        final MessageChat item = chats.get(position);
 
         holder.tvName.setText(item.getNama_pemilik());
         holder.tvMessage.setText(item.getIsi());
-        Log.e("lele", item.getId() + " ");
 
+        if (isAdmin) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AlertDialog alertDialog = new AlertDialog.Builder(context)
+                            .setTitle("Penambahan Poin")
+                            .setMessage("Anda yakin menambahkan 1 poin untuk IKM ini?")
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Repository.INSTANCE.addPoint((int) item.getId());
+                                    Toast.makeText(context, "Anda telah menambahkan 1 poin untuk toko " + item.getNama_toko(), Toast.LENGTH_LONG).show();
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            })
+                            .setCancelable(true)
+                            .create();
+
+                    alertDialog.setCanceledOnTouchOutside(true);
+                    alertDialog.show();
+                }
+            });
+        }
     }
 
     @Override
