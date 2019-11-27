@@ -12,13 +12,16 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mooka_customer.extension.showmessage
+import com.example.mooka_umkm.adapter.ChatAdapter
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.example.mooka_umkm.network.model.MessageChat
 import com.example.mooka_umkm.network.model.UMKM
 import com.gemastik.raporsa.extension.setupNoAdapter
 import com.google.firebase.database.*
+import com.pens.managementmasyrakat.extension.getPrefInt
 import kotlinx.android.synthetic.main.fragment_chatroom.*
 import kotlinx.android.synthetic.main.fragment_chatroom.view.*
 import kotlinx.android.synthetic.main.item_messages_send.view.*
@@ -31,6 +34,7 @@ class ChatroomFragment : Fragment() {
 
     var databaseReference: DatabaseReference? = null
     lateinit var umkm: UMKM
+    lateinit var chatAdapter : ChatAdapter
     var chatMessages = mutableListOf<MessageChat>()
 
     override fun onCreateView(
@@ -44,6 +48,9 @@ class ChatroomFragment : Fragment() {
             .getReference("group_chat")
             .child("community-${chatroomFragmentArgs.communityid}")
             .child("messages")
+
+        val id = context!!.getPrefInt("umkm_id")
+        chatAdapter= ChatAdapter(chatMessages,id)
 
         readMessage(chatroomFragmentArgs.communityid)
 
@@ -80,12 +87,11 @@ class ChatroomFragment : Fragment() {
                     val messageChat = it.getValue(MessageChat::class.java)
                     chatMessages.add(messageChat!!)
                 }
-                rv_chat.setupNoAdapter(R.layout.item_messages_send,
-                    chatMessages){v,m ->
-                    v.text_message_name.text = m.nama_pemilik
-                    v.text_message_body.text = m.isi
-                }
-                rv_chat.smoothScrollToPosition(chatMessages.count()-1);
+
+                chatAdapter.notifyDataSetChanged()
+                view!!.rv_chat.adapter = chatAdapter
+                view!!.rv_chat.layoutManager = LinearLayoutManager(context)
+                view!!.rv_chat.smoothScrollToPosition(chatMessages.count()-1)
             }
 
         })
