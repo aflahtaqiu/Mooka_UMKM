@@ -42,6 +42,7 @@ class CommunityFragment : Fragment() {
         umkmId = context?.getPrefInt("umkm_id")
         setupRekomendasi(view!!, umkmId)
         setupKomunitasSaya(view, umkmId)
+        setupKomunitasKota(view, umkmId)
         return view
     }
 
@@ -52,7 +53,8 @@ class CommunityFragment : Fragment() {
                     Log.d("Loading", it.status.toString())
                 }
                 Resource.SUCCESS ->{
-                    val data: List<Community> = it.data!!.map { communityUMKM -> communityUMKM.community }.sortedByDescending { community -> community.official }
+                    val data: List<Community> = it.data!!.map { communityUMKM -> communityUMKM.community }
+                        .sortedByDescending { community -> community.official }
                     view.rv_komunitas_saya.setupNoAdapter(
                         R.layout.item_komunitas_saya,
                         data,
@@ -91,6 +93,45 @@ class CommunityFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun setupKomunitasKota (view: View, umkmId: Int?) {
+        Repository.getCommunities().observe(this, Observer {
+            when(it?.status){
+                Resource.LOADING ->{
+                    Log.d("Loading", it.status.toString())
+                }
+                Resource.SUCCESS ->{
+                    val data = it.data!!.sortedByDescending { community -> community.official }
+                        .filter { it.title.contains("Kota") }
+                    view.rv_komunitas_kota.setupNoAdapter(
+                        R.layout.item_komunitas_saya,
+                        data,
+                        LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false),
+                        ::bindKomunitasKota
+                    )
+                    Log.d("Success", it.data.toString())
+                }
+                Resource.ERROR ->{
+                    Log.d("Error", it.message!!)
+                    context?.showmessage("Something is wrong")
+                }
+            }
+        })
+    }
+
+    fun bindKomunitasKota (view: View, community: Community) {
+        Picasso.get().load(community.banner.url).into(view.iv_banner)
+        view.tv_title.text = community.title
+        view.tv_subtitle.text = community.subtitle
+        if (!community.official)
+            view.iv_checked.visibility = View.GONE
+        view.setOnClickListener {
+            context?.showAlertDialog("Join Komunitas","Apakah anda ingin masuk forum \" ${community.title} \" ini ?"
+                ,"", ""){
+                tambahKomunitas(community.id)
+            }
+        }
     }
 
     fun bindRekomendasi(view: View, community: Community) {
