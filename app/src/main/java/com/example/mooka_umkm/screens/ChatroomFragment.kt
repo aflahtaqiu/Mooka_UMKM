@@ -14,8 +14,7 @@ import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.example.mooka_umkm.network.model.UMKM
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_chatroom.*
 import kotlinx.android.synthetic.main.fragment_chatroom.view.*
 import org.threeten.bp.LocalDateTime
@@ -35,10 +34,21 @@ class ChatroomFragment : Fragment() {
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_chatroom, container, false)
         val chatroomFragmentArgs by navArgs<ChatroomFragmentArgs>()
-        getUmkmDetail(view!!, chatroomFragmentArgs.umkmid);
+        getUmkmDetail(view!!, chatroomFragmentArgs.umkmid)
         databaseReference = FirebaseDatabase.getInstance().getReference("group_chat")
             .child("community-${chatroomFragmentArgs.communityid}")
             .child("messages")
+
+        databaseReference!!.addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        })
+
         view.button_chatbox_send.setOnClickListener {
             val pesan = hashMapOf<String,Any>()
             pesan["isi"] = edittext_chatbox.text.toString()
@@ -72,3 +82,4 @@ class ChatroomFragment : Fragment() {
 
 
 }
+
