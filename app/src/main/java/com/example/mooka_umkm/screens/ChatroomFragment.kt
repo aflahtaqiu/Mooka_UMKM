@@ -19,13 +19,10 @@ import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.example.mooka_umkm.network.model.MessageChat
 import com.example.mooka_umkm.network.model.UMKM
-import com.example.mooka_umkm.services.NotificationService
-import com.gemastik.raporsa.extension.setupNoAdapter
 import com.google.firebase.database.*
 import com.pens.managementmasyrakat.extension.getPrefInt
 import kotlinx.android.synthetic.main.fragment_chatroom.*
 import kotlinx.android.synthetic.main.fragment_chatroom.view.*
-import kotlinx.android.synthetic.main.item_messages_send.view.*
 
 
 /**

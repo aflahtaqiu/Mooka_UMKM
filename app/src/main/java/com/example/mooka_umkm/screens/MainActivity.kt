@@ -9,10 +9,6 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.mooka_umkm.services.NotificationService
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.messaging.FirebaseMessaging
 import com.pens.managementmasyrakat.extension.getPrefInt
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -32,7 +28,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         val umkmId = getPrefInt("umkm_id")
-        FirebaseMessaging.getInstance().subscribeToTopic("all")
 
         navigation.setupWithNavController(navController )
 

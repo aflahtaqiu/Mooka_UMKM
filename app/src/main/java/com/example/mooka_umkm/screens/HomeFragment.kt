@@ -12,6 +12,7 @@ import com.example.mooka_customer.extension.showmessage
 import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
+import com.google.firebase.messaging.FirebaseMessaging
 import com.pens.managementmasyrakat.extension.getPrefInt
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
@@ -26,6 +27,7 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        FirebaseMessaging.getInstance().subscribeToTopic("pengunguman")
         val umkm_id = context?.getPrefInt("umkm_id")
         getDetailUmkm(view!!, umkm_id!!)
         return view

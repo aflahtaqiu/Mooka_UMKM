@@ -13,7 +13,6 @@ import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
-
 import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
@@ -32,7 +31,7 @@ import java.util.Map;
  * Created by miftahun on 8/8/18.
  */
 
-public class MikaFirebaseMessagingService extends FirebaseMessagingService {
+public class RTFirebaseMessagingService extends FirebaseMessagingService {
 
     public static final String FCM_PARAM = "picture";
     private static final String CHANNEL_NAME = "FCM";
@@ -66,16 +65,17 @@ public class MikaFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentText(notification.getBody())
                 .setAutoCancel(true)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-                //.setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.win))
+//                .setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.win))
                 .setContentIntent(pendingIntent)
                 .setColor(ContextCompat.getColor(this,R.color.colorAccent))
                 .setLights(Color.RED, 1000, 300)
                 .setDefaults(Notification.DEFAULT_VIBRATE)
                 .setNumber(++numMessages)
-                .setSmallIcon(R.drawable.logo_mika)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(largeIcon(this));
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN
+                && Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
             notificationBuilder.setPriority(NotificationCompat.PRIORITY_HIGH);
         }
 
@@ -114,10 +114,9 @@ public class MikaFirebaseMessagingService extends FirebaseMessagingService {
         notificationManager.notify(0, notificationBuilder.build());
     }
 
-    private Bitmap largeIcon(MikaFirebaseMessagingService mikaFirebaseMessagingService) {
-        Resources res = mikaFirebaseMessagingService.getResources();
-        Bitmap largeIcon = BitmapFactory.decodeResource(res, R.drawable.logo_mika);
-        return largeIcon;
+    private Bitmap largeIcon(RTFirebaseMessagingService namiFirebaseMessagingService) {
+        Resources res = namiFirebaseMessagingService.getResources();
+        return BitmapFactory.decodeResource(res, R.mipmap.ic_launcher);
     }
 
 

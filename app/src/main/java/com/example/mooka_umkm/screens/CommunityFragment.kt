@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mooka_customer.extension.showAlertDialog
 import com.example.mooka_customer.extension.showmessage
-import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.example.mooka_umkm.network.model.Community
@@ -25,6 +24,9 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_community.view.*
 import kotlinx.android.synthetic.main.item_komunitas_saya.view.*
 import java.util.HashMap
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.RemoteMessage
+
 
 /**
  * A simple [Fragment] subclass.
@@ -39,13 +41,16 @@ class CommunityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_community, container, false)
+        val view = inflater.inflate(com.example.mooka_umkm.R.layout.fragment_community, container, false)
         umkmId = context?.getPrefInt("umkm_id")
         setupRekomendasi(view!!, umkmId)
         setupKomunitasSaya(view, umkmId)
         view.mtb_1.setOnClickListener {
 //                        val umkmId = getPrefInt("umkm_id")
-            NotificationService.getInstance(context).sendNotifToUmkm("all", "Baju Kuning","Barang Terjual Murah")
+
+
+            NotificationService.getInstance(context).sendNotifToWargas("title", "sdfasdqwe")
+//            Log.d(CommunityFragment::class.java.simpleName, "onCreateView: $response");
         }
         return view
     }
@@ -59,7 +64,7 @@ class CommunityFragment : Fragment() {
                 Resource.SUCCESS ->{
                     val data: List<Community> = it.data!!.map { communityUMKM -> communityUMKM.community }.sortedByDescending { community -> community.official }
                     view.rv_komunitas_saya.setupNoAdapter(
-                        R.layout.item_komunitas_saya,
+                        com.example.mooka_umkm.R.layout.item_komunitas_saya,
                         data,
                         LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false),
                         ::bindKomunitasSaya
@@ -83,7 +88,7 @@ class CommunityFragment : Fragment() {
                 Resource.SUCCESS ->{
                     val data = it.data!!.sortedByDescending { community -> community.official }
                     view.rv_rekomendasi_komunitas.setupNoAdapter(
-                        R.layout.item_komunitas_saya,
+                        com.example.mooka_umkm.R.layout.item_komunitas_saya,
                         data,
                         LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false),
                         ::bindRekomendasi
