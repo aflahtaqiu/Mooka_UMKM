@@ -3,10 +3,10 @@ package com.example.mooka_umkm.screens
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,9 +25,7 @@ import com.pens.managementmasyrakat.extension.getPrefInt
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_community.view.*
 import kotlinx.android.synthetic.main.item_komunitas_saya.view.*
-import java.util.HashMap
-import com.google.firebase.messaging.FirebaseMessaging
-import com.google.firebase.messaging.RemoteMessage
+import java.util.*
 
 
 /**
@@ -91,9 +89,9 @@ class CommunityFragment : Fragment() {
                     Log.d("Loading", it.status.toString())
                 }
                 Resource.SUCCESS ->{
-                    val data = it.data!!.sortedByDescending { community -> community.official }
+                    val data = it.data!!.filter { !it.title.contains("Kota") && !it.official }
                     view.rv_rekomendasi_komunitas.setupNoAdapter(
-                        com.example.mooka_umkm.R.layout.item_komunitas_saya,
+                        R.layout.item_komunitas_saya,
                         data,
                         LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false),
                         ::bindRekomendasi

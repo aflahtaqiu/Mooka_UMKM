@@ -56,12 +56,11 @@ class HomeFragment : Fragment() {
                     view.tv_jumlah_produk.text = it.data!!.products.count().toString()
                     view.tv_produk_terbaik.text = it.data!!.products.firstOrNull()?.title
 
-//<<<<<<< HEAD
+
                     view.tv_pendapatan_per_bulan.text = "${it.data!!.orders.count()} Produk per Bulan"
                     var tot_price = it.data!!.orders.map { it.product }.sumBy { it.harga }
                     view.tv_penghasilan.text = "${tot_price.toString().toRupiahs()} per Bulan"
 
-//=======
                     view.rv_all_products_home.setupNoAdapter(
                         R.layout.item_produk_home,
                         it.data!!.products,
@@ -74,7 +73,7 @@ class HomeFragment : Fragment() {
                     }
 
                     Log.d("Success", it.data.toString())
-//>>>>>>> a9d119e386371924ba99f2ce43beafe52bd5bfd4
+
                 }
                 Resource.ERROR ->
                 {
