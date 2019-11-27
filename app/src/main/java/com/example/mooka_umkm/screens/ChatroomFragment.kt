@@ -19,6 +19,7 @@ import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.example.mooka_umkm.network.model.MessageChat
 import com.example.mooka_umkm.network.model.UMKM
+import com.example.mooka_umkm.services.NotificationService
 import com.gemastik.raporsa.extension.setupNoAdapter
 import com.google.firebase.database.*
 import com.pens.managementmasyrakat.extension.getPrefInt
@@ -66,6 +67,7 @@ class ChatroomFragment : Fragment() {
 
             edittext_chatbox.onEditorAction(EditorInfo.IME_ACTION_DONE)
             edittext_chatbox.setText("")
+
         }
         return view
     }

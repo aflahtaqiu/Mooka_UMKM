@@ -16,6 +16,7 @@ import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.example.mooka_umkm.network.model.Community
+import com.example.mooka_umkm.services.NotificationService
 import com.gemastik.raporsa.extension.setupNoAdapter
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -42,6 +43,10 @@ class CommunityFragment : Fragment() {
         umkmId = context?.getPrefInt("umkm_id")
         setupRekomendasi(view!!, umkmId)
         setupKomunitasSaya(view, umkmId)
+        view.mtb_1.setOnClickListener {
+//                        val umkmId = getPrefInt("umkm_id")
+            NotificationService.getInstance(context).sendNotifToUmkm("all", "Baju Kuning","Barang Terjual Murah")
+        }
         return view
     }
 

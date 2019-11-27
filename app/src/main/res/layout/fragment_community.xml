@@ -36,8 +36,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rv_rekomendasi_komunitas" />
 
+
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton2"
+            android:id="@+id/mtb_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -75,7 +76,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialButton2" />
+            app:layout_constraintTop_toBottomOf="@+id/mtb_1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_rekomendasi_komunitas"

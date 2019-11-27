@@ -37,7 +37,6 @@ public class MikaFirebaseMessagingService extends FirebaseMessagingService {
     public static final String FCM_PARAM = "picture";
     private static final String CHANNEL_NAME = "FCM";
     private static final String CHANNEL_DESC = "Firebase Cloud Messaging";
-    private static final String AUTH_KEY = "key=AAAAG-plUn8:APA91bGtKWzuSijMBD3kAJ7B5w6DyjLH2EXTPydEoJ9S7MH4dhU6in0e3YqBdzNtxDBbC3GtIsseHHabR1l8j-m7jJVk9Q8lv3lkAuJsHvl9l2rqAz0kxBwF4W3psLvKnEjkrA638ncUvhDL1LJ0UIm7FMqB5hQMnw";
     private int numMessages = 0;
 
     @Override
@@ -73,7 +72,7 @@ public class MikaFirebaseMessagingService extends FirebaseMessagingService {
                 .setLights(Color.RED, 1000, 300)
                 .setDefaults(Notification.DEFAULT_VIBRATE)
                 .setNumber(++numMessages)
-                .setSmallIcon(R.mipmap.logo_mika)
+                .setSmallIcon(R.drawable.logo_mika)
                 .setLargeIcon(largeIcon(this));
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
@@ -117,7 +116,7 @@ public class MikaFirebaseMessagingService extends FirebaseMessagingService {
 
     private Bitmap largeIcon(MikaFirebaseMessagingService mikaFirebaseMessagingService) {
         Resources res = mikaFirebaseMessagingService.getResources();
-        Bitmap largeIcon = BitmapFactory.decodeResource(res, R.mipmap.logo_mika);
+        Bitmap largeIcon = BitmapFactory.decodeResource(res, R.drawable.logo_mika);
         return largeIcon;
     }
 
