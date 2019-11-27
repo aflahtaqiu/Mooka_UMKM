@@ -39,10 +39,10 @@ import java.util.Scanner;
 
 public class NotificationService {
 
-    private static final String BACKCHECKING_REMINDER_NOTIFICATION_CHANNEL_ID = "reminder_notification_channel";
+    private static final String BACKCHECKING_REMINDER_NOTIFICATION_CHANNEL_ID = "notificy";
     private static final int BACKCHECKING_SUCCESS_PENDING_INTENT_ID = 317;
     private static final int WATER_REMINDER_NOTIFICATION_ID = 1;
-    private static final String AUTH_KEY = "key=AAAAG-plUn8:APA91bGtKWzuSijMBD3kAJ7B5w6DyjLH2EXTPydEoJ9S7MH4dhU6in0e3YqBdzNtxDBbC3GtIsseHHabR1l8j-m7jJVk9Q8lv3lkAuJsHvl9l2rqAz0kxBwF4W3psLvKnEjkrA638ncUvhDL1LJ0UIm7FMqB5hQMnw";
+    private static final String AUTH_KEY = "AAAANk3_R48:APA91bHfqvK4b7X6A2mRwHmmJv5zXeErAgCbekVrHvBrXg8pgDb_6zw6tNqTFCZIOV3pjjQhFI3_YGxGujVwnNlXp_ROK3DiMDTn3QzkIprTQk7SsHPU2aH67VTzxJXq8msp8fViQOWg";
     private final Context mContext;
     private final NotificationManager mNotificationManager;
     private static NotificationService instance;
@@ -135,11 +135,11 @@ public class NotificationService {
         return largeIcon;
     }
 
-    public void sendNotifToAOC(final String aocNumber, String tempatLokasi, String title) {
+    public void sendNotifToUmkm(final String umkm_id, final String namaBarang, final String title) {
         new Thread(new Runnable() {
             @Override
             public void run() {
-//                pushNotification(aocNumber,tempatLokasi,title);
+                pushNotification(umkm_id, namaBarang, title);
             }
         }).start();
     }
