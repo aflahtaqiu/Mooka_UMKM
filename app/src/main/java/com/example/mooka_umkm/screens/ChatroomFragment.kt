@@ -51,7 +51,7 @@ class ChatroomFragment : Fragment() {
             .child("messages")
 
         val id = context!!.getPrefInt("umkm_id")
-        chatAdapter= ChatAdapter(chatMessages,id)
+        chatAdapter= ChatAdapter(chatMessages,id, context)
 
         readMessage(chatroomFragmentArgs.communityid)
 

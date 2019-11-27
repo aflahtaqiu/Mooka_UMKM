@@ -1,5 +1,8 @@
 package com.example.mooka_umkm.adapter;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,13 +28,15 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
 
     private List<MessageChat> chats;
     private int idSender;
+    private Context context;
 
     private static final int MSG_TYPE_LEFT = 0;
     private static final int MSG_TYPE_RIGHT = 1;
 
-    public ChatAdapter(List<MessageChat> chats, int idSender) {
+    public ChatAdapter(List<MessageChat> chats, int idSender, Context context) {
         this.chats = chats;
         this.idSender = idSender;
+        this.context = context;
     }
 
     @Override
@@ -57,8 +62,32 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
 
         holder.tvName.setText(item.getNama_pemilik());
         holder.tvMessage.setText(item.getIsi());
-        Log.e("lele", item.getId() + " ");
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog alertDialog = new AlertDialog.Builder(context)
+                        .setTitle("Penambahan Poin")
+                        .setMessage("Anda yakin menambahkan 1 poin untuk IKM ini?")
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                // TODO: logic add point to ikm
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        })
+                        .setCancelable(true)
+                        .create();
+
+                alertDialog.setCanceledOnTouchOutside(true);
+                alertDialog.show();
+            }
+        });
     }
 
     @Override
