@@ -1,6 +1,7 @@
 package com.example.mooka_umkm.network
 
 import com.example.mooka_umkm.network.model.ListResponse
+import com.example.mooka_umkm.network.model.UMKM
 import kotlinx.coroutines.Deferred
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -8,6 +9,10 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
+
+    @GET("umkms")
+    fun getAllUmkms() : Deferred<Response<ListResponse<UMKM>>>
+
 //    @GET("search/repositories")
 //    fun getRepos(@Query("q") query: String): Deferred<Response<ListResponse<Repo>>>
 //

@@ -1,6 +1,10 @@
 package com.example.mooka_umkm.network
 
 import android.content.Context
+import com.example.mooka_umkm.Config
+import com.example.mooka_umkm.network.lib.networkCall
+import com.example.mooka_umkm.network.model.ListResponse
+import com.example.mooka_umkm.network.model.UMKM
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,6 +17,11 @@ import java.util.concurrent.TimeUnit
 
 
 object Repository {
+
+    fun getAllUmkms() = networkCall<ListResponse<UMKM>, List<UMKM>> {
+        client = ManagemenApi.apiService.getAllUmkms()
+    }
+
 //    fun saveUser(user: UserResponse, context: Context){
 //        val gson = Gson()
 //        val json = gson.toJson(user)
@@ -171,20 +180,20 @@ object Repository {
 }
 
 object ManagemenApi {
-//    var interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-//    var API_BASE_URL: String = BuildConfig.API_BASE_URL
-//    var httpClient = OkHttpClient.Builder()
-//        .addInterceptor(interceptor)
-//        .connectTimeout(10, TimeUnit.SECONDS)
-//        .readTimeout(20, TimeUnit.SECONDS)
-//    var builder: Retrofit.Builder = Retrofit.Builder()
-//        .baseUrl(API_BASE_URL)
-//        .addConverterFactory(GsonConverterFactory.create())
-//        .addCallAdapterFactory(CoroutineCallAdapterFactory())
-//    var retrofit = builder
-//        .client(httpClient.build())
-//        .build()
-//
-//    var apiService: ApiService = retrofit.create<ApiService>(ApiService::class.java)
-//    val PREFNAME = BuildConfig.PREFNAME
+    var interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    var API_BASE_URL: String = Config.API_BASE_URL
+    var httpClient = OkHttpClient.Builder()
+        .addInterceptor(interceptor)
+        .connectTimeout(10, TimeUnit.SECONDS)
+        .readTimeout(20, TimeUnit.SECONDS)
+    var builder: Retrofit.Builder = Retrofit.Builder()
+        .baseUrl(API_BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(CoroutineCallAdapterFactory())
+    var retrofit = builder
+        .client(httpClient.build())
+        .build()
+
+    var apiService: ApiService = retrofit.create<ApiService>(ApiService::class.java)
+    val PREFNAME = "mooka"
 }

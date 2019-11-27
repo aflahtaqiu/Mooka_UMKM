@@ -1,13 +1,16 @@
-package com.gemastik.raporsa.extension
+package com.example.mooka_customer.extension
 
+import android.app.Activity
 import android.content.Context
 import android.database.Cursor
 import android.net.Uri
 import android.provider.MediaStore
+import android.text.InputType
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.ProgressBar
@@ -17,12 +20,12 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import java.text.SimpleDateFormat
-import java.util.*
-import android.app.Activity
-import android.view.inputmethod.InputMethodManager
+import com.example.mooka_umkm.R
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.threeten.bp.DayOfWeek
 import org.threeten.bp.temporal.WeekFields
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 fun Context.showmessage(msg: String){
@@ -80,26 +83,37 @@ fun View.addDialogDaftarArisanOnClick(judulArisan: String, update: () -> Unit){
     }
 }
 
+//fun Context.showAlertDialog(
+//    title: String = "Perubahan Data",
+//    message: String = "Apakah anda yakin ingin melalukannya",
+//    onYes: String = "Perubahan Data Berhasil",
+//    onNo: String = "Perubahan Data Gagal",
+//    onNegatifPressed: () -> Unit = {},
+//    update: () ->
+//){
+//    val builder = AlertDialog.Builder(this)
+//    builder.setTitle(title)
+//    builder.setMessage(message)
+//    builder.setPositiveButton("YES"){ _, _ ->
+//        this.showmessage(onYes)
+//        update()
+//    }
+//
+//    builder.setNegativeButton("No"){ _, _ ->
+//        onNegatifPressed()
+//        this.showmessage(onNo)
+//    }
+//    val dialog: AlertDialog = builder.create()
+//    dialog.show()
+//}
+
 fun Context.showAlertDialog(
     title: String = "Perubahan Data",
-    message: String = "Apakah anda yakin ingin melalukannya",
-    onYes: String = "Perubahan Data Berhasil",
-    onNo: String = "Perubahan Data Gagal",
-    onNegatifPressed: () -> Unit = {},
-    update: () -> Unit
+    message: String = "Apakah anda yakin ingin melalukannya"
 ){
     val builder = AlertDialog.Builder(this)
     builder.setTitle(title)
     builder.setMessage(message)
-    builder.setPositiveButton("YES"){ _, _ ->
-        this.showmessage(onYes)
-        update()
-    }
-
-    builder.setNegativeButton("No"){ _, _ ->
-        onNegatifPressed()
-        this.showmessage(onNo)
-    }
     val dialog: AlertDialog = builder.create()
     dialog.show()
 }
@@ -115,8 +129,6 @@ fun Uri.getRealPath(context: Context): String? {
     } finally {
         cursor?.close()
     }
-
-
 }
 
 fun View.toLoading() {
@@ -172,3 +184,23 @@ fun Context.hideKeyboardFrom(view: View) {
     val imm = this.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.hideSoftInputFromWindow(view.windowToken, 0)
 }
+
+//fun Context.showEditableBottomSheetDialog(title: String = "Masukkan data baru",
+//                                          text: String,
+//                                          inputType: Int = InputType.TYPE_CLASS_TEXT,
+//                                          update: (String) -> Unit){
+//    val bottomSheetDialog = BottomSheetDialog(this)
+//    val dialogView = LayoutInflater.from(this).inflate(R.layout.fragment_bottom_sheet_dialog, null)
+//    dialogView.tv_batal.setOnClickListener {
+//        bottomSheetDialog.dismiss()
+//    }
+//    bottomSheetDialog.setContentView(dialogView)
+//    dialogView.tv_title.text = title
+//    dialogView.et_data.setText(text)
+//    dialogView.et_data.inputType= inputType
+//    dialogView.tv_simpan.setOnClickListener {
+//        update(dialogView.et_data.text.toString())
+//        bottomSheetDialog.dismiss()
+//    }
+//    bottomSheetDialog.show()
+//}
