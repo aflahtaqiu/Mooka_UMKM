@@ -1,9 +1,6 @@
 package com.example.mooka_umkm.network
 
-import com.example.mooka_umkm.network.model.Community
-import com.example.mooka_umkm.network.model.CommunityUMKM
-import com.example.mooka_umkm.network.model.ListResponse
-import com.example.mooka_umkm.network.model.UMKM
+import com.example.mooka_umkm.network.model.*
 import kotlinx.coroutines.Deferred
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -39,6 +36,11 @@ interface ApiService {
     fun addCommunityPoint (
         @Path("umkm_id") id: Int
     ) : Deferred<Response<UMKM>>
+
+    @GET("umkms/{umkm_id}/inboxes")
+    fun  getAllInboxes(
+        @Path("umkm_id") id: Int
+    ) : Deferred<Response<ListResponse<Inbox>>>
 
 //    @GET("search/repositories")
 //    fun getRepos(@Query("q") query: String): Deferred<Response<ListResponse<Repo>>>

@@ -3,10 +3,7 @@ package com.example.mooka_umkm.network
 import android.content.Context
 import com.example.mooka_umkm.Config
 import com.example.mooka_umkm.network.lib.networkCall
-import com.example.mooka_umkm.network.model.Community
-import com.example.mooka_umkm.network.model.CommunityUMKM
-import com.example.mooka_umkm.network.model.ListResponse
-import com.example.mooka_umkm.network.model.UMKM
+import com.example.mooka_umkm.network.model.*
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -39,6 +36,10 @@ object Repository {
 
     fun getAllUmkmCommunity(umkm_id: Int) = networkCall<ListResponse<CommunityUMKM>, List<CommunityUMKM>> {
         client = ManagemenApi.apiService.getAllUmkmCommunity(umkm_id)
+    }
+
+    fun getAllInbox(umkm_id: Int) = networkCall<ListResponse<Inbox>, List<Inbox>> {
+        client = ManagemenApi.apiService.getAllInboxes(umkm_id)
     }
 
     fun addPoint (umkm_id: Int) = networkCall<UMKM, UMKM> {

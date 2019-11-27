@@ -153,6 +153,8 @@ class CommunityFragment : Fragment() {
         view.tv_subtitle.text = community.subtitle
         if (!community.official)
             view.iv_checked.visibility = View.GONE
+        else
+            view.iv_checked.visibility = View.VISIBLE
         view.setOnClickListener {
             context?.showAlertDialog("Join Komunitas","Apakah anda ingin masuk forum \" ${community.title} \" ini ?"
             ,"", ""){

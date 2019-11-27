@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.example.mooka_customer.extension.showmessage
+import com.example.mooka_customer.extension.toRupiahs
 import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
@@ -51,9 +52,13 @@ class HomeFragment : Fragment() {
                     view.tv_jumlah_produk.text = it.data!!.orders.count().toString()
                     view.tv_produk_terbaik.text = it.data!!.products.firstOrNull()?.title
 
-                    Log.d("Success", it.data.toString())
+                    view.tv_pendapatan_per_bulan.text = "${it.data!!.orders.count()} Produk per Bulan"
+                    var tot_price = it.data!!.orders.map { it.product }.sumBy { it.harga }
+                    view.tv_penghasilan.text = "${tot_price.toString().toRupiahs()} per Bulan"
+
                 }
-                Resource.ERROR ->{
+                Resource.ERROR ->
+                {
                     Log.d("Error", it.message!!)
                     context?.showmessage("Something is wrong")
                 }

@@ -9,12 +9,12 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.mooka_umkm.screens.HomeFragment"
-        android:label="fragment_home"
+        android:label="MIKA"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/inboxFragment"
         android:name="com.example.mooka_umkm.screens.InboxFragment"
-        android:label="fragment_inbox"
+        android:label="Inbox"
         tools:layout="@layout/fragment_inbox">
         <action
             android:id="@+id/action_inboxFragment_to_umkmbisaFragment"
@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/communityFragment"
         android:name="com.example.mooka_umkm.screens.CommunityFragment"
-        android:label="fragment_community"
+        android:label="Komunitas"
         tools:layout="@layout/fragment_community">
         <action
             android:id="@+id/action_communityFragment_to_chatroomFragment"
@@ -32,12 +32,12 @@
     <fragment
         android:id="@+id/tokoFragment"
         android:name="com.example.mooka_umkm.screens.TokoFragment"
-        android:label="fragment_toko"
+        android:label="Pesanan IKM"
         tools:layout="@layout/fragment_toko" />
     <fragment
         android:id="@+id/chatroomFragment"
         android:name="com.example.mooka_umkm.screens.ChatroomFragment"
-        android:label="fragment_chatroom"
+        android:label="ChatRoom"
         tools:layout="@layout/fragment_chatroom">
         <argument
             android:name="COMMUNITY_ID"
@@ -52,6 +52,6 @@
     <fragment
         android:id="@+id/umkmbisaFragment"
         android:name="com.example.mooka_umkm.screens.UmkmbisaFragment"
-        android:label="fragment_umkmbisa"
+        android:label="IKMBisa"
         tools:layout="@layout/fragment_umkmbisa" />
 </navigation>
