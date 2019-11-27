@@ -16,6 +16,7 @@ import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.example.mooka_umkm.network.model.Community
+import com.example.mooka_umkm.network.model.CommunityUMKM
 import com.example.mooka_umkm.services.NotificationService
 import com.gemastik.raporsa.extension.setupNoAdapter
 import com.google.firebase.database.DatabaseReference
@@ -59,8 +60,9 @@ class CommunityFragment : Fragment() {
                     Log.d("Loading", it.status.toString())
                 }
                 Resource.SUCCESS ->{
-                    val data: List<Community> = it.data!!.map { communityUMKM -> communityUMKM.community }
-                        .sortedByDescending { community -> community.official }
+                    val data: List<CommunityUMKM> = it.data!!
+//                        .map { communityUMKM -> communityUMKM.community }
+                        .sortedByDescending { community -> community.community.official }
                     view.rv_komunitas_saya.setupNoAdapter(
                         R.layout.item_komunitas_saya,
                         data,
@@ -185,14 +187,14 @@ class CommunityFragment : Fragment() {
         reference!!.push().setValue(user)
     }
 
-    fun bindKomunitasSaya(view: View, community: Community) {
-        Picasso.get().load(community.banner.url).into(view.iv_banner)
-        view.tv_title.text = community.title
-        view.tv_subtitle.text = community.subtitle
-        if (!community.official)
+    fun bindKomunitasSaya(view: View, communityUMKM: CommunityUMKM) {
+        Picasso.get().load(communityUMKM.community.banner.url).into(view.iv_banner)
+        view.tv_title.text = communityUMKM.community.title
+        view.tv_subtitle.text = communityUMKM.community.subtitle
+        if (!communityUMKM.community.official)
             view.iv_checked.visibility = View.GONE
         view.setOnClickListener {
-            findNavController().navigate(CommunityFragmentDirections.actionCommunityFragmentToChatroomFragment(community.id, umkmId!!))
+            findNavController().navigate(CommunityFragmentDirections.actionCommunityFragmentToChatroomFragment(communityUMKM.community.id, umkmId!!, communityUMKM.is_admin))
         }
     }
 }

@@ -13,7 +13,6 @@ import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
 import com.pens.managementmasyrakat.extension.getPrefInt
-import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_toko.view.*
 
 /**

@@ -43,6 +43,9 @@
             app:argType="integer" />
         <argument android:name="UMKM_ID"
             app:argType="integer" />
+        <argument
+            android:name="isAdmin"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/umkmbisaFragment"

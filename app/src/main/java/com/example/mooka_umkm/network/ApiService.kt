@@ -35,6 +35,11 @@ interface ApiService {
         @Path("umkm_id") id: Int
     ) : Deferred<Response<ListResponse<CommunityUMKM>>>
 
+    @FormUrlEncoded
+    @POST("umkms/{umkm_id}/community_umkms/add_point")
+    fun addCommunityPoint (
+        @Path("umkm_id") id: Int
+    ) : Deferred<Response<UMKM>>
 
 //    @GET("search/repositories")
 //    fun getRepos(@Query("q") query: String): Deferred<Response<ListResponse<Repo>>>
