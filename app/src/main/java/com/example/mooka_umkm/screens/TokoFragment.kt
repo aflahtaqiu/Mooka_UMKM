@@ -8,10 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.mooka_customer.extension.showmessage
 import com.example.mooka_umkm.R
 import com.example.mooka_umkm.network.Repository
 import com.example.mooka_umkm.network.lib.Resource
+import com.pens.managementmasyrakat.extension.clear
 import com.pens.managementmasyrakat.extension.getPrefInt
 import kotlinx.android.synthetic.main.fragment_toko.view.*
 
@@ -29,6 +31,10 @@ class TokoFragment : Fragment() {
 
         val umkm_id = context?.getPrefInt("umkm_id")
         getDetailUmkm(view!!, umkm_id!!)
+        view.iv_logout.setOnClickListener {
+            context?.clear()
+            findNavController().navigate(TokoFragmentDirections.actionTokoFragmentToLoginActivity())
+        }
         return view
     }
 

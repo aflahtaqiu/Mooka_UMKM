@@ -33,7 +33,11 @@
         android:id="@+id/tokoFragment"
         android:name="com.example.mooka_umkm.screens.TokoFragment"
         android:label="Pesanan IKM"
-        tools:layout="@layout/fragment_toko" />
+        tools:layout="@layout/fragment_toko" >
+        <action
+            android:id="@+id/action_tokoFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
     <fragment
         android:id="@+id/chatroomFragment"
         android:name="com.example.mooka_umkm.screens.ChatroomFragment"
@@ -54,4 +58,9 @@
         android:name="com.example.mooka_umkm.screens.UmkmbisaFragment"
         android:label="IKMBisa"
         tools:layout="@layout/fragment_umkmbisa" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.mooka_umkm.screens.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true">
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -100,7 +104,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="24dp"
         android:textColorHint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/btn_daftar"
+        app:layout_constraintBottom_toTopOf="@+id/tv_standarisasi"
         app:layout_constraintEnd_toStartOf="@+id/btn_upload"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -117,12 +121,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
         android:text="Upload"
         android:textAllCaps="false"
         app:backgroundTint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/btn_daftar"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout2" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_daftar"
@@ -191,4 +195,68 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_standarisasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textStyle="bold"
+        android:text="Standarisasi Produk"
+        android:textColor="@color/ruby_red"
+
+        android:textSize="@dimen/font_title"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2" />
+
+    <TextView
+        android:id="@+id/tv_standarisasi2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Jenis"
+        android:textColor="@color/ruby_red"
+        android:textSize="@dimen/font_title"
+        app:layout_constraintBottom_toBottomOf="@id/spinner"
+        app:layout_constraintStart_toStartOf="@+id/tv_standarisasi"
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:entries="@array/regsitrasi"
+        android:prompt="@string/prompt"
+        app:layout_constraintBottom_toTopOf="@+id/et_tanggal_inpl"
+        app:layout_constraintEnd_toEndOf="@+id/btn_upload"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_standarisasi2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_tanggal_inpl"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:textColorHint="@color/ruby_red"
+        app:layout_constraintBottom_toTopOf="@+id/btn_daftar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal"
+            android:id="@+id/edittext"
+            android:focusable="false"
+            android:inputType="date|none"
+            android:drawableRight="@drawable/ic_date_range_black_24dp"
+            android:drawableTint="@color/ruby_red"
+            android:textColor="@color/ruby_red" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
