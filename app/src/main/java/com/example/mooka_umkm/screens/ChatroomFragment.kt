@@ -91,7 +91,9 @@ class ChatroomFragment : Fragment() {
                 chatAdapter.notifyDataSetChanged()
                 view!!.rv_chat.adapter = chatAdapter
                 view!!.rv_chat.layoutManager = LinearLayoutManager(context)
-                view!!.rv_chat.smoothScrollToPosition(chatMessages.count()-1)
+
+                if (chatMessages != null && chatMessages.count()!=0)
+                    view!!.rv_chat.smoothScrollToPosition(chatMessages.count()-1)
             }
 
         })
