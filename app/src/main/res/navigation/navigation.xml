@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/chatroomFragment"
         android:name="com.example.mooka_umkm.screens.ChatroomFragment"
-        android:label="ChatRoom"
+        android:label="Mentoring"
         tools:layout="@layout/fragment_chatroom">
         <argument
             android:name="COMMUNITY_ID"
