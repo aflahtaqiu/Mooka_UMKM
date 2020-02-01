@@ -3,6 +3,7 @@
     package="com.example.mooka_umkm">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screens.MainActivity"></activity>
+        <activity android:name=".screens.MainActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
         <service android:name=".services.RTFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

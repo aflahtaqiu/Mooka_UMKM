@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mooka_customer.extension.showmessage
 import com.example.mooka_customer.extension.toRupiahs
@@ -32,9 +33,16 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
         val umkmId = context?.getPrefInt("umkm_id")
-        FirebaseMessaging.getInstance().subscribeToTopic(umkmId.toString())
         val umkm_id = context?.getPrefInt("umkm_id")
+
+        view.tv_tambahkan_produk.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddProductFragment(umkm_id!!))
+        }
+
+
+        FirebaseMessaging.getInstance().subscribeToTopic(umkmId.toString())
         getDetailUmkm(view!!, umkm_id!!)
         return view
     }
@@ -67,9 +75,11 @@ class HomeFragment : Fragment() {
                         LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     ) {view, product ->
                         Picasso.get().load(product.gambar.url).into(view.iv_banner_product)
-
                         view.tv_name_product.text = product.title
                         view.tv_price_product.text = product.harga.toString().toRupiahs()
+                        view.iv_share.setOnClickListener {
+                            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToShareFragment(product.id))
+                        }
                     }
 
                     Log.d("Success", it.data.toString())

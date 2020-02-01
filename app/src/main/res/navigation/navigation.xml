@@ -10,7 +10,14 @@
         android:id="@+id/homeFragment"
         android:name="com.example.mooka_umkm.screens.HomeFragment"
         android:label="MIKA"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_shareFragment"
+            app:destination="@+id/shareFragment" />
+    </fragment>
     <fragment
         android:id="@+id/inboxFragment"
         android:name="com.example.mooka_umkm.screens.InboxFragment"
@@ -54,4 +61,22 @@
         android:name="com.example.mooka_umkm.screens.UmkmbisaFragment"
         android:label="IKMBisa"
         tools:layout="@layout/fragment_umkmbisa" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.mooka_umkm.screens.AddProductFragment"
+        android:label="fragment_add_product"
+        tools:layout="@layout/fragment_add_product" >
+        <argument
+            android:name="UMKM_ID"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="com.example.mooka_umkm.screens.ShareFragment"
+        android:label="fragment_share"
+        tools:layout="@layout/fragment_share" >
+        <argument
+            android:name="PRODUCT_ID"
+            app:argType="integer" />
+    </fragment>
 </navigation>

@@ -19,7 +19,7 @@
     <string name="main_notification_channel_name">Primary</string>
 
     <string name="notification_channel_id">default</string>
-    
+
     <array name="array_ic_avatar">
         <item>@drawable/avatar_1</item>
         <item>@drawable/avatar_2</item>
