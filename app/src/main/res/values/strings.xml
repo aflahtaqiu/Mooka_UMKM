@@ -38,4 +38,12 @@
         <item>@drawable/avatar_15</item>
         <item>@drawable/avatar_16</item>
     </array>
+
+    <string-array name="regsitrasi">
+        <item>Haki</item>
+        <item>Pirit</item>
+        <item>Halal</item>
+    </string-array>
+
+    <string name="prompt">Pilih Jenis</string>
 </resources>

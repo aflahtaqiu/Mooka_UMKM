@@ -37,3 +37,7 @@ fun <T> Context.getPrefObj(key: String, classType: Class<T>): T?{
     val jsonString : String? = this.getSharedPreferences(Config.PREFNAME, 0).getString(key, null)
     return if (jsonString != null) Gson().fromJson(jsonString, classType) else null
 }
+
+fun Context.clear(){
+    this.getSharedPreferences(Config.PREFNAME, 0).edit().clear().apply()
+}
