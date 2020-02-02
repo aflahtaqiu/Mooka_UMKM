@@ -30,7 +30,6 @@ class RegisterFragment : Fragment() {
         val calendar = Calendar.getInstance()
         view.edittext.setOnClickListener {
             DatePickerDialog(context!!, DatePickerDialog.OnDateSetListener { _, year, month, day ->
-//                tanggalSelesai = "$year-$month-$day"
                 view.edittext.setText("$day ${DateFormatSymbols().months[month-1]} $year")
             },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DATE)).show()
         }

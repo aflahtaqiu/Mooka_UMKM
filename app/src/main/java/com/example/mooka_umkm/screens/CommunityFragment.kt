@@ -51,7 +51,6 @@ class CommunityFragment : Fragment() {
                         val umkmId = context?.getPrefInt("umkm_id")
             NotificationService.getInstance(context).sendNotifToUmkm(
                 umkmId.toString(),"Barang Ditawar", "Barang anda asdlkasjdqeker ditawar oleh seseorang")
-//            Log.d(CommunityFragment::class.java.simpleName, "onCreateView: $response");
         }
         return view
     }
@@ -64,7 +63,6 @@ class CommunityFragment : Fragment() {
                 }
                 Resource.SUCCESS ->{
                     val data: List<CommunityUMKM> = it.data!!
-//                        .map { communityUMKM -> communityUMKM.community }
                         .sortedByDescending { community -> community.community.official }
                     view.rv_komunitas_saya.setupNoAdapter(
                         com.example.mooka_umkm.R.layout.item_komunitas_saya,

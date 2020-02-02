@@ -22,10 +22,6 @@ class ShareFragment : Fragment() {
         val  view = inflater.inflate(R.layout.fragment_share, container, false)
 
         val shareFragmentArgs by navArgs<ShareFragmentArgs>()
-
-
         return view
     }
-
-
 }

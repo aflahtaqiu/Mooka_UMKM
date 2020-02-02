@@ -35,7 +35,6 @@ class UmkmbisaFragment : Fragment() {
         return view
     }
 
-
     private fun setupUmkmbisaRecyclerView(view: View) {
         Repository.getAllUmkms().observe(this, Observer {
             when(it?.status){

@@ -35,16 +35,19 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         val umkmId = context?.getPrefInt("umkm_id")
-        val umkm_id = context?.getPrefInt("umkm_id")
 
         view.tv_tambahkan_produk.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddProductFragment(umkm_id!!))
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddProductFragment(umkmId!!))
         }
 
-
         FirebaseMessaging.getInstance().subscribeToTopic(umkmId.toString())
-        getDetailUmkm(view!!, umkm_id!!)
         return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val umkm_id = context?.getPrefInt("umkm_id")
+        getDetailUmkm(view!!, umkm_id!!)
     }
 
     private fun getDetailUmkm(view: View, umkmId: Int) {
@@ -66,7 +69,7 @@ class HomeFragment : Fragment() {
 
 
                     view.tv_pendapatan_per_bulan.text = "${it.data!!.orders.count()} Produk per Bulan"
-                    var tot_price = it.data!!.orders.map { it.product }.sumBy { it.harga }
+                    val tot_price = it.data!!.orders.map { it.product }.sumBy { it.harga }
                     view.tv_penghasilan.text = "${tot_price.toString().toRupiahs()} per Bulan"
 
                     view.rv_all_products_home.setupNoAdapter(
