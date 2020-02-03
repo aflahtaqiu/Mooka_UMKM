@@ -3,10 +3,10 @@ package com.example.mooka_umkm.screens
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.example.mooka_customer.extension.showAlertDialog
@@ -171,6 +171,7 @@ class ShareFragment : Fragment() {
                     Log.d("Success", it.data.toString())
                     it.data!!.forEach {
                         if (it.product_id == productId ) {
+                            idPost = it.id!!
                             when(it.status) {
                                 successStatus -> {
                                     when(it.type_name) {

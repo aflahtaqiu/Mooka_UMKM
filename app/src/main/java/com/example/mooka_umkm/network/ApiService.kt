@@ -72,6 +72,7 @@ interface ApiService {
     @GET("associatied_accounts")
     fun getShareStatus (): Deferred<Response<ListResponse<ResponseAssociatiedAccounts>>>
 
+    @FormUrlEncoded
     @PUT("associatied_accounts/{id}")
     fun updateOTP(
         @Path("id") id: Int,
