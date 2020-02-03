@@ -39,7 +39,6 @@ class AddProductFragment : Fragment() {
     private lateinit var photoUri:String
     private lateinit var viewRoot:View
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

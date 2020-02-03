@@ -22,6 +22,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import com.example.mooka_umkm.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.fragment_bottom_sheet_dialog.view.*
+import kotlinx.android.synthetic.main.item_komunitas_saya.view.*
 import org.threeten.bp.DayOfWeek
 import org.threeten.bp.temporal.WeekFields
 import java.text.SimpleDateFormat
@@ -207,6 +209,20 @@ fun Context.showAlertDialog(
     }
     val dialog: AlertDialog = builder.create()
     dialog.show()
+}
+
+fun Context.showEditableBottomSheetDialog(update: (String, String) -> Unit){
+    val bottomSheetDialog = BottomSheetDialog(this)
+    val dialogView = LayoutInflater.from(this).inflate(R.layout.fragment_bottom_sheet_dialog, null)
+    dialogView.tv_batal.setOnClickListener {
+        bottomSheetDialog.dismiss()
+    }
+    bottomSheetDialog.setContentView(dialogView)
+    dialogView.tv_simpan.setOnClickListener {
+        update(dialogView.et_username.text.toString(), dialogView.et_password.text.toString())
+        bottomSheetDialog.dismiss()
+    }
+    bottomSheetDialog.show()
 }
 
 //fun Context.showEditableBottomSheetDialog(title: String = "Masukkan data baru",

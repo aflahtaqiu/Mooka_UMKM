@@ -81,7 +81,7 @@ class HomeFragment : Fragment() {
                         view.tv_name_product.text = product.title
                         view.tv_price_product.text = product.harga.toString().toRupiahs()
                         view.iv_share.setOnClickListener {
-                            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToShareFragment(product.id))
+                            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToShareFragment(product.id, umkmId))
                         }
                     }
 

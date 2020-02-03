@@ -52,6 +52,24 @@ object Repository {
     ) = networkCall<Product, Product> {
         client = ManagemenApi.apiService.postNewProduct(umkmId, productName, productHarga, productStock, productDescription, file)
     }
+
+    fun getProductDetail (id:Int) = networkCall<Product, Product> { client = ManagemenApi.apiService.getProductDetail(id) }
+
+    fun shareProduct (umkmId:Int,
+                      productId:Int,
+                      type_name:String,
+                      username:String,
+                      password:String) = networkCall<ResponseAssociatiedAccounts, ResponseAssociatiedAccounts> {
+        client = ManagemenApi.apiService.shareProduct(umkmId, productId, type_name, username, password)
+    }
+
+    fun getStatusShare () = networkCall<ListResponse<ResponseAssociatiedAccounts>, List<ResponseAssociatiedAccounts>> {
+        client = ManagemenApi.apiService.getShareStatus()
+    }
+
+    fun updateOTP (id: Int, otp:String) = networkCall<ResponseAssociatiedAccounts, ResponseAssociatiedAccounts> {
+        client = ManagemenApi.apiService.updateOTP(id, otp)
+    }
 }
 
 object ManagemenApi {

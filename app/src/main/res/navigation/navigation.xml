@@ -82,6 +82,9 @@
         <argument
             android:name="PRODUCT_ID"
             app:argType="integer" />
+        <argument
+            android:name="UMKM_ID"
+            app:argType="integer" />
     </fragment>
     <activity
         android:id="@+id/loginActivity"

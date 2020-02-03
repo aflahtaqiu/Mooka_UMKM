@@ -14,6 +14,8 @@ data class Product(
     val title: String,
     val umkm_id: Int,
     val updated_at: String,
+    val description: String,
+    val berat: Int,
     val umkm: UMKM
 ) : DataResponse<Product> {
     override fun retrieveData(): Product = this

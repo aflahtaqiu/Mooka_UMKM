@@ -53,4 +53,28 @@ interface ApiService {
         @Part productDescription: MultipartBody.Part,
         @Part file: MultipartBody.Part
     ) :Deferred<Response<Product>>
+
+    @GET("products/{product_id}")
+    fun getProductDetail(
+        @Path("product_id") id: Int
+    ): Deferred<Response<Product>>
+
+    @FormUrlEncoded
+    @POST("associatied_accounts")
+    fun shareProduct(
+        @Field("umkm_id") umkmId:Int,
+        @Field("product_id") productId:Int,
+        @Field("type_name")typeName:String,
+        @Field("username") username:String,
+        @Field("password") password:String
+    ):Deferred<Response<ResponseAssociatiedAccounts>>
+
+    @GET("associatied_accounts")
+    fun getShareStatus (): Deferred<Response<ListResponse<ResponseAssociatiedAccounts>>>
+
+    @PUT("associatied_accounts/{id}")
+    fun updateOTP(
+        @Path("id") id: Int,
+        @Field("otp") otp:String
+    ) : Deferred<Response<ResponseAssociatiedAccounts>>
 }
