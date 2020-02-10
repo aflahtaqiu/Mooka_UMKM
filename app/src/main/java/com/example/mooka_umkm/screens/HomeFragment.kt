@@ -85,7 +85,7 @@ class HomeFragment : Fragment() {
                         }
 
                         view.setOnClickListener {
-                            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailProductFragment(product.id))
+                            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToShareFragment(product.id, umkmId))
                         }
                     }
 
