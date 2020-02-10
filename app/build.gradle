@@ -66,4 +66,10 @@ dependencies {
 
     //calendar view
     implementation 'com.github.kizitonwose:CalendarView:0.2.8'
+
+
+    //google analytics service
+    implementation 'com.google.android.gms:play-services-analytics:17.0.0'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

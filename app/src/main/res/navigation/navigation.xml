@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_homeFragment_to_shareFragment"
             app:destination="@+id/shareFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailProductFragment"
+            app:destination="@id/detailProductFragment" />
     </fragment>
     <fragment
         android:id="@+id/inboxFragment"
@@ -91,4 +94,13 @@
         android:name="com.example.mooka_umkm.screens.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/detailProductFragment"
+        android:name="com.example.mooka_umkm.DetailProductFragment"
+        android:label="fragment_detail_product"
+        tools:layout="@layout/fragment_detail_product" >
+        <argument
+            android:name="PRODUCT_ID"
+            app:argType="integer" />
+    </fragment>
 </navigation>

@@ -68,7 +68,7 @@ public class NotificationService {
 
     private Bitmap largeIcon(Context context) {
         Resources res = context.getResources();
-        return BitmapFactory.decodeResource(res, R.drawable.logo_mika);
+        return BitmapFactory.decodeResource(res, R.mipmap.logo_mooka);
     }
 
     public void sendNotifToUmkm(final String umkm_id, final String title, final String body) {
