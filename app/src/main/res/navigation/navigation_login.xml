@@ -28,10 +28,18 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_termsConditionFragment"
+            app:destination="@id/termsConditionFragment" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.mooka_umkm.screens.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/termsConditionFragment"
+        android:name="com.example.mooka_umkm.TermsConditionFragment"
+        android:label="fragment_terms_condition"
+        tools:layout="@layout/fragment_terms_condition" />
 </navigation>

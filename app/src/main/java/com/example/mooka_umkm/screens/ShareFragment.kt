@@ -49,7 +49,7 @@ class ShareFragment : Fragment() {
                 Log.d("Loading", it.status.toString())
             }
             Resource.SUCCESS ->{
-                Log.d("Success", it.data.toString())
+                Log.e("Success detailproduct", it.data.toString())
 
                 Picasso.get().load(it.data!!.gambar.url).into(view.imageView8)
                 view.tv_nama_barang.text = it.data!!.title

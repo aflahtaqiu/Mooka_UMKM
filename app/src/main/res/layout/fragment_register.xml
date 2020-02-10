@@ -1,284 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fillViewport="true">
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".screens.RegisterFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true">
 
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout7"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:textColorHint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout19"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        tools:context=".screens.RegisterFragment">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nama_usaha"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout7"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Usaha"
-            android:textColor="@color/ruby_red" />
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/ruby_red"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout19"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nama_usaha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Usaha"
+                android:textColor="@color/ruby_red" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout19"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:textColorHint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout19"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Pemilik"
-            android:textColor="@color/ruby_red" />
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/ruby_red"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Pemilik"
+                android:textColor="@color/ruby_red" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout6"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:textColorHint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout6"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Alamat Usaha"
-            android:textColor="@color/ruby_red" />
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/ruby_red"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Alamat Usaha"
+                android:textColor="@color/ruby_red" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:textColorHint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Kategori Usaha"
-            android:textColor="@color/ruby_red" />
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/ruby_red"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kategori Usaha"
+                android:textColor="@color/ruby_red" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:textColorHint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="No Telp"
-            android:textColor="@color/ruby_red" />
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/ruby_red"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="No Telp"
+                android:textColor="@color/ruby_red" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="24dp"
-        android:textColorHint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/tv_standarisasi"
-        app:layout_constraintEnd_toStartOf="@+id/btn_upload"
-        app:layout_constraintStart_toStartOf="parent">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Upload SIUP"
-            android:textColor="@color/ruby_red" />
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="24dp"
+            android:textColorHint="@color/ruby_red"
+            app:layout_constraintBottom_toTopOf="@+id/tv_standarisasi"
+            app:layout_constraintEnd_toStartOf="@+id/btn_upload"
+            app:layout_constraintStart_toStartOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Upload SIUP"
+                android:textColor="@color/ruby_red" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_upload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="Upload"
-        android:textAllCaps="false"
-        app:backgroundTint="@color/ruby_red"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout2" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_daftar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/ruby_red"
-        android:text="daftar"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        app:backgroundTint="@color/ruby_red"
-        app:cornerRadius="8dp"
-        app:layout_constraintBottom_toTopOf="@id/linearlayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/linearlayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_upload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:layout_marginEnd="32dp"
+            android:text="Upload"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/ruby_red"
+            app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout2" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Sudah pernah masuk Mooka ?"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:textColor="@color/ruby_red"/>
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="64dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <TextView
-                android:id="@+id/tv_masuk_disini"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Masuk Disini"
-                android:textColor="@color/ruby_red"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sudah pernah masuk Mooka ?"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textColor="@color/ruby_red"/>
+
+                <TextView
+                    android:id="@+id/tv_masuk_disini"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Masuk Disini"
+                    android:textColor="@color/ruby_red"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:src="@mipmap/logo_mika"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:src="@mipmap/logo_mika"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tv_standarisasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold"
+            android:text="Standarisasi Produk"
+            android:textColor="@color/ruby_red"
 
-    <TextView
-        android:id="@+id/tv_standarisasi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:textStyle="bold"
-        android:text="Standarisasi Produk"
-        android:textColor="@color/ruby_red"
+            android:textSize="@dimen/font_title"
+            app:layout_constraintBottom_toTopOf="@+id/spinner"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout2" />
 
-        android:textSize="@dimen/font_title"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout2" />
+        <TextView
+            android:id="@+id/tv_standarisasi2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/tv_standarisasi2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="Jenis"
+            android:textColor="@color/ruby_red"
+            android:textSize="@dimen/font_title"
+            app:layout_constraintBottom_toBottomOf="@id/spinner"
+            app:layout_constraintStart_toStartOf="@+id/tv_standarisasi"
+            app:layout_constraintTop_toTopOf="@+id/spinner" />
 
-        android:text="Jenis"
-        android:textColor="@color/ruby_red"
-        android:textSize="@dimen/font_title"
-        app:layout_constraintBottom_toBottomOf="@id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/tv_standarisasi"
-        app:layout_constraintTop_toTopOf="@+id/spinner" />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:entries="@array/regsitrasi"
+            android:prompt="@string/prompt"
+            app:layout_constraintBottom_toTopOf="@+id/et_tanggal_inpl"
+            app:layout_constraintEnd_toEndOf="@+id/btn_upload"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_standarisasi2" />
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="8dp"
-        android:entries="@array/regsitrasi"
-        android:prompt="@string/prompt"
-        app:layout_constraintBottom_toTopOf="@+id/et_tanggal_inpl"
-        app:layout_constraintEnd_toEndOf="@+id/btn_upload"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintStart_toEndOf="@+id/tv_standarisasi2" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_tanggal_inpl"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:textColorHint="@color/ruby_red"
-        app:layout_constraintBottom_toTopOf="@+id/btn_daftar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_tanggal_inpl"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tanggal"
-            android:id="@+id/edittext"
-            android:focusable="false"
-            android:inputType="date|none"
-            android:drawableRight="@drawable/ic_date_range_black_24dp"
-            android:drawableTint="@color/ruby_red"
-            android:textColor="@color/ruby_red" />
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="@color/ruby_red"
+            app:layout_constraintBottom_toTopOf="@+id/checkbox_term_condition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tanggal"
+                android:id="@+id/edittext"
+                android:focusable="false"
+                android:inputType="date|none"
+                android:drawableRight="@drawable/ic_date_range_black_24dp"
+                android:drawableTint="@color/ruby_red"
+                android:textColor="@color/ruby_red" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_daftar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/ruby_red"
+            android:clickable="false"
+            android:text="daftar"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            app:backgroundTint="@color/ruby_red"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toTopOf="@id/linearlayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <CheckBox
+            android:id="@+id/checkbox_term_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="Saya menyetujui "
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_daftar"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_terms_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Syarat dan Ketentuan"
+            android:textColor="@color/blue_500"
+            app:layout_constraintBottom_toBottomOf="@id/checkbox_term_condition"
+            app:layout_constraintStart_toEndOf="@id/checkbox_term_condition"
+            app:layout_constraintTop_toTopOf="@+id/checkbox_term_condition" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

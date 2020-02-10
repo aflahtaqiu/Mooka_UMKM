@@ -54,7 +54,7 @@ class HomeFragment : Fragment() {
         Repository.getUMKMId(umkmId).observe(this, Observer {
             when(it?.status){
                 Resource.LOADING ->{
-                    Log.d("Loading", it.status.toString())
+                    Log.e("Loading", it.status.toString())
                 }
                 Resource.SUCCESS ->{
                     view.tv_nama.text = it.data!!.nama
@@ -85,12 +85,12 @@ class HomeFragment : Fragment() {
                         }
                     }
 
-                    Log.d("Success", it.data.toString())
+                    Log.e("Success", it.data.toString())
 
                 }
                 Resource.ERROR ->
                 {
-                    Log.d("Error", it.message!!)
+                    Log.e("Error", it.message!!)
                     context?.showmessage("Something is wrong")
                 }
             }
